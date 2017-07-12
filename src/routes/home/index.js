@@ -8,21 +8,22 @@
  */
 
 import React from 'react';
-import Home from './Home';
+import Blocks from '../../components/Blocks';
 import Layout from '../../components/Layout';
 
 async function action({ fetch }) {
   const resp = await fetch('/graphql', {
     body: JSON.stringify({
-      query: '{news{title,link,content}}',
+      query: '{blocks{author,difficulty,gasLimit,gasUsed,hash,miner,number,parentHash,signature,size,timeStamp}}',
     }),
   });
+
   const { data } = await resp.json();
-  if (!data || !data.news) throw new Error('Failed to load the news feed.');
+  if (!data || !data.blocks) throw new Error('Failed to load blocks');
   return {
     chunks: ['home'],
     title: 'React Starter Kit',
-    component: <Layout><Home news={data.news} /></Layout>,
+    component: <Layout><Blocks blocks={data.blocks} /></Layout>,
   };
 }
 

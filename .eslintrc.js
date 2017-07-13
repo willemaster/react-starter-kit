@@ -64,6 +64,10 @@ module.exports = {
     // babel-plugin-transform-react-pure-class-to-function
     // https://github.com/kriasoft/react-starter-kit/pull/961
     'react/prefer-stateless-function': 'off',
+
+    'react/prop-types': 'off',
+
+    'experimentalDecorators': 'off',
   },
 
   settings: {

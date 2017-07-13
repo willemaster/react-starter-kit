@@ -18,17 +18,17 @@ class Block extends React.Component {
   render() {
     return (
       <ul>
-        <li>{this.props.block.author}</li>
-        <li>{this.props.block.difficulty}</li>
-        <li>{this.props.block.gasLimit}</li>
-        <li>{this.props.block.gasUsed}</li>
-        <li>{this.props.block.hash}</li>
-        <li>{this.props.block.miner}</li>
-        <li>{this.props.block.number}</li>
-        <li>{this.props.block.parentHash}</li>
-        <li>{this.props.block.signature}</li>
-        <li>{this.props.block.size}</li>
-        <li>{this.props.block.timeStamp}</li>
+        <li>Author: {this.props.block.author}</li>
+        <li>Difficulty: {this.props.block.difficulty}</li>
+        <li>Gas Limit: {this.props.block.gasLimit}</li>
+        <li>Gas USed: {this.props.block.gasUsed}</li>
+        <li>Hash: {this.props.block.hash}</li>
+        <li>Miner: {this.props.block.miner}</li>
+        <li>Number: {this.props.block.number}</li>
+        <li>Parent Hash: {this.props.block.parentHash}</li>
+        <li>Signature: {this.props.block.signature}</li>
+        <li>Size: {this.props.block.size}</li>
+        <li>Time Stamp: {this.props.block.timeStamp}</li>
       </ul>
     );
   }

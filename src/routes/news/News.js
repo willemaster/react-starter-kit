@@ -9,15 +9,17 @@
 
 import React from 'react';
 import Header from '../../components/Header';
+import News from '../../components/News';
 
-class HomeRoute extends React.Component {
+class NewsRoute extends React.Component {
   render() {
     return (
       <div>
         <Header />
+        <News />
       </div>
     );
   }
 }
 
-export default HomeRoute;
+export default NewsRoute;

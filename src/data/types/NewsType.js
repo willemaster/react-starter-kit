@@ -7,17 +7,17 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import React from 'react';
-import Header from '../../components/Header';
+import {
+  GraphQLObjectType as ObjectType,
+  GraphQLString as StringType,
+} from 'graphql';
 
-class HomeRoute extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header />
-      </div>
-    );
-  }
-}
+const NewsType = new ObjectType({
+  name: 'News',
+  fields: {
+    title: { type: StringType },
+    url: { type: StringType },
+  },
+});
 
-export default HomeRoute;
+export default NewsType;

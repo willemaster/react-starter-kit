@@ -8,15 +8,16 @@
  */
 
 import { GraphQLList as List } from 'graphql';
-import getRecentBlocks from '../../services/ethereumClient';
-import BlockType from '../types/BlockType';
+import getNews from '../../services/newsClient';
+import NewsType from '../types/NewsType';
 
-const blocks = {
-  type: new List(BlockType),
-  resolve() {
-    const data = getRecentBlocks();
+const news = {
+  type: new List(NewsType),
+  async resolve() {
+    const data = await getNews();
+
     return data;
   },
 };
 
-export default blocks;
+export default news;

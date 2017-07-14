@@ -26,7 +26,8 @@ const BlockType = new ObjectType({
     parentHash: { type: StringType },
     signature: { type: StringType },
     size: { type: IntType },
-    timeStamp: { type: IntType },
+    timestamp: { type: IntType },
+    transactions: { type: StringType },
   },
 });
 

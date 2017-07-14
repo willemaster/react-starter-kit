@@ -1,28 +1,28 @@
-import { FETCH_BLOCKS_START, FETCH_BLOCKS_ERROR, RECEIVE_BLOCKS } from '../constants';
+import { FETCH_NEWS_START, FETCH_NEWS_ERROR, RECEIVE_NEWS } from '../constants';
 
 const initialState = {
   fetching: false,
-  blocks: [],
+  newsItems: [],
   error: null,
   fetched: false,
 };
 
 export default function blocks(state = initialState, action) {
   switch (action.type) {
-    case FETCH_BLOCKS_START:
+    case FETCH_NEWS_START:
       return {
         ...state,
         fetching: true,
       };
-    case FETCH_BLOCKS_ERROR:
+    case FETCH_NEWS_ERROR:
       return {
         ...state,
         error: action.payload,
       };
-    case RECEIVE_BLOCKS:
+    case RECEIVE_NEWS:
       return {
         ...state,
-        blocks: action.payload,
+        newsItems: action.payload,
         fetching: false,
       };
     default:

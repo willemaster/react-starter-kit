@@ -1,11 +1,11 @@
 import React from 'react';
-import HomeRoute from './Home';
+import BlocksRoute from './Blocks';
 
 async function action() {
   return {
-    chunks: ['home'],
+    chunks: ['blocks'],
     title: 'React Starter Kit',
-    component: <HomeRoute />,
+    component: <BlocksRoute />,
   };
 }
 

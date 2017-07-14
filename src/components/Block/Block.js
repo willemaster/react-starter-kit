@@ -10,7 +10,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Block extends React.Component {
+export default class Block extends React.Component {
   static propTypes = {
     block: PropTypes.shape().isRequired,
   };
@@ -28,10 +28,9 @@ class Block extends React.Component {
         <li>Parent Hash: {this.props.block.parentHash}</li>
         <li>Signature: {this.props.block.signature}</li>
         <li>Size: {this.props.block.size}</li>
-        <li>Time Stamp: {this.props.block.timeStamp}</li>
+        <li>Time Stamp: {this.props.block.timestamp}</li>
+        <li>Transactions {this.props.block.transactions}</li>
       </ul>
     );
   }
 }
-
-export default Block;

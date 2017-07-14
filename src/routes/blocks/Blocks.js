@@ -8,16 +8,18 @@
  */
 
 import React from 'react';
+import Blocks from '../../components/Blocks';
 import Header from '../../components/Header';
 
-class HomeRoute extends React.Component {
+class BlocksRoute extends React.Component {
   render() {
     return (
       <div>
         <Header />
+        <Blocks />
       </div>
     );
   }
 }
 
-export default HomeRoute;
+export default BlocksRoute;

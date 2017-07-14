@@ -13,12 +13,14 @@ import {
 } from 'graphql';
 
 import blocks from './queries/blocks';
+import news from './queries/news';
 
 const schema = new Schema({
   query: new ObjectType({
     name: 'Query',
     fields: {
       blocks,
+      news,
     },
   }),
 });

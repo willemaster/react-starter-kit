@@ -13,7 +13,7 @@ export function fetchBlocks() {
     dispatch({ type: FETCH_BLOCKS_START, payload: {} });
 
     fetch('/graphql', {
-      body: JSON.stringify({ query: '{blocks{author,difficulty,gasLimit,gasUsed,hash,miner,number,parentHash,signature,size,timeStamp}}' }),
+      body: JSON.stringify({ query: '{blocks{author,difficulty,gasLimit,gasUsed,hash,miner,number,parentHash,signature,size,timestamp,transactions}}' }),
     })
     .then(response => response.json())
     .then(json => dispatch({ type: RECEIVE_BLOCKS, payload: json.data.blocks }))

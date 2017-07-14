@@ -8,22 +8,25 @@
  */
 import { connect } from 'react-redux';
 import React from 'react';
-import Block from '../Block';
-import { fetchBlocks } from '../../actions/blocks';
+import { fetchNews } from '../../actions/news';
+import NewsItem from '../NewsItem';
 
 @connect(store => ({
-  blocks: store.blocks.blocks,
+  newsItems: store.news.newsItems,
+  fetching: store.news.fetching,
+  store,
 }))
-export default class Blocks extends React.Component {
+export default class News extends React.Component {
   componentWillMount() {
-    this.props.dispatch(fetchBlocks());
+    this.props.dispatch(fetchNews());
   }
 
   render() {
-    const blocks = this.props.blocks.map(item => <Block block={item} />);
-
+    const newsItems = this.props.newsItems.map(item => <NewsItem data={item} />);
     return (
-      <div>{blocks}</div>
+      <div>
+        <div>{newsItems}</div>
+      </div>
     );
   }
 }

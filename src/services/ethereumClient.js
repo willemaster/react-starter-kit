@@ -5,6 +5,7 @@ export default function getRecentBlocks() {
 
   const places = [0, 1, 2];
 
-  const blocks = places.map(x => client.eth.getBlock(client.eth.blockNumber - x));
+  const blocks = places.map(x => client.eth.getBlock(client.eth.blockNumber - 1000 - x));
+
   return blocks;
 }

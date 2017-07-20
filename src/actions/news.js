@@ -13,10 +13,12 @@ export function fetchNews() {
     dispatch({ type: FETCH_NEWS_START, payload: {} });
 
     fetch('/graphql', {
-      body: JSON.stringify({ query: '{news{title,url}}' }),
+      body: JSON.stringify({ query: '{news{title,url,text,main_image}}' }),
     })
     .then(response => response.json())
-    .then(json => dispatch({ type: RECEIVE_NEWS, payload: json.data.news }))
+    .then((json) => {
+      dispatch({ type: RECEIVE_NEWS, payload: json.data.news });
+    })
     .catch((error) => {
       dispatch({ type: FETCH_NEWS_ERROR, payload: { val: error } });
     });

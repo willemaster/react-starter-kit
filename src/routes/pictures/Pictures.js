@@ -1,16 +1,16 @@
 import React from 'react';
 import Header from '../../components/Header';
-import News from '../../components/News';
+import Pictures from '../../components/Pictures';
 
-class NewsRoute extends React.Component {
+class PicturesRoute extends React.Component {
   render() {
     return (
       <div>
         <Header />
-        <News />
+        <Pictures />
       </div>
     );
   }
 }
 
-export default NewsRoute;
+export default PicturesRoute;

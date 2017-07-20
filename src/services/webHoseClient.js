@@ -1,13 +1,9 @@
 import webhoseio from 'webhoseio';
 
-export default function getNews() {
-  const client = webhoseio.config({ token: 'd706cc0a-1ef3-4ef5-b662-a356b73a5c90' });
-  let result;
+const client = webhoseio.config({ token: 'd706cc0a-1ef3-4ef5-b662-a356b73a5c90' });
 
-  client.query('filterWebContent', { q: '"donald trump" language:english' })
-    .then((output) => {
-      result = output.posts;
-    });
+export default async function getWebhoseNews() {
+  const result = await client.query('filterWebContent', { q: '"ethereum" language:english' });
 
-  return result;
+  return result.posts;
 }

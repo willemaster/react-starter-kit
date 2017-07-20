@@ -1,0 +1,6 @@
+{
+  "name": "SelectableAccount",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./SelectableAccount.js"
+}

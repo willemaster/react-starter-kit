@@ -1,0 +1,6 @@
+{
+  "name": "Pictures",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Pictures.js"
+}

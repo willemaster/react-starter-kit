@@ -23,10 +23,12 @@
     "express": "^4.15.3",
     "express-graphql": "^0.6.6",
     "express-jwt": "^5.3.0",
+    "express-winston": "^2.4.0",
     "graphql": "^0.10.3",
     "history": "^4.6.3",
     "isomorphic-style-loader": "^3.0.0",
     "jsonwebtoken": "^7.4.1",
+    "moment": "^2.18.1",
     "mongodb": "^2.2.30",
     "monk": "^6.0.1",
     "node-fetch": "^1.7.1",
@@ -39,6 +41,7 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
+    "redis": "^2.7.1",
     "redux": "^3.7.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
@@ -49,7 +52,8 @@
     "universal-router": "^3.2.0",
     "web3": "^0.19.1",
     "webhoseio": "^1.0.2",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "winston": "^2.3.1"
   },
   "devDependencies": {
     "assets-webpack-plugin": "^3.5.1",
@@ -171,7 +175,7 @@
     ]
   },
   "scripts": {
-    "precommit": "lint-staged",
+    //"precommit": "lint-staged",
     "lint-js": "eslint --ignore-path .gitignore --ignore-pattern \"!**/.*\" .",
     "lint-css": "stylelint \"src/**/*.{css,less,scss,sss}\"",
     "lint": "yarn run lint-js && yarn run lint-css",

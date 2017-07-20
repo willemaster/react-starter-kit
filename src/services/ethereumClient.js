@@ -28,7 +28,7 @@ export function setDefaultAccount(hash) {
 }
 
 export async function getPictures() {
-//  console.log(`getPictures: default account is: ${client.eth.defaultAccount}`); // eslint-disable-line no-console
+  console.log(`getPictures: default account is: ${client.eth.defaultAccount}`);
 
   const abi = getPicturesAbi();
   const contractAddress = '0x0B5A779233Bb6c167c03619cEbfDFD683a728b10';
@@ -38,7 +38,7 @@ export async function getPictures() {
   try {
     result = await contract.getPicture();
   } catch (e) {
-  //  console.log(`OOP: ${e}`);  // eslint-disable-line no-console
+    console.log(`OOP: ${e}`);  // eslint-disable-line no-console
   }
 
   const endResult = [{

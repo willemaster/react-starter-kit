@@ -10,30 +10,19 @@
 import {
   GraphQLSchema as Schema,
   GraphQLObjectType as ObjectType,
-  GraphQLString as StringType,
-  GraphQLNonNull,
 } from 'graphql';
 
 import blocks from './queries/blocks';
 import news from './queries/news';
 import pictures from './queries/pictures';
 import accounts from './queries/accounts';
-import AccountType from './types/AccountType';
+import setDefaultAccount from './mutations/setDefaultAccount';
 
 const MutationType = new ObjectType({
   name: 'Mutation',
   description: 'These are the things we can change',
   fields: {
-    setDefaultAccount: {
-      type: AccountType, // return type?
-      description: 'Set default account.',
-      args: {
-        hash: { type: new GraphQLNonNull(StringType) },
-      },
-      resolve: (value, { hash }) => {
-        console.log(`deleting: ${hash}`); // eslint-disable-line no-console
-      },
-    },
+    setDefaultAccount,
   },
 });
 

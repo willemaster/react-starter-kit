@@ -1,11 +1,10 @@
-import { FETCH_PICTURES_START, FETCH_PICTURES_ERROR, RECEIVE_PICTURES, SET_SELECTED_ACCOUNT_COMPLETE } from '../constants';
+import { FETCH_PICTURES_START, FETCH_PICTURES_ERROR, RECEIVE_PICTURES } from '../constants';
 
 const initialState = {
   fetching: false,
   pictures: [],
   error: null,
   fetched: false,
-  selectedAccountHash: '',
 };
 
 export default function blocks(state = initialState, action) {
@@ -26,11 +25,6 @@ export default function blocks(state = initialState, action) {
         pictures: action.payload,
         fetching: false,
         fetched: true,
-      };
-    case SET_SELECTED_ACCOUNT_COMPLETE:
-      return {
-        ...state,
-        selectedAccountHash: action.payload,
       };
     default:
       return state;

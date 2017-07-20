@@ -25,7 +25,6 @@ export default function blocks(state = initialState, action) {
         ...state,
         accounts: action.payload,
         fetching: false,
-        selectedAccountHash: action.payload[0].hash,
       };
     case SET_SELECTED_ACCOUNT_COMPLETE:
       return {

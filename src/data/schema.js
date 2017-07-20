@@ -17,12 +17,14 @@ import news from './queries/news';
 import pictures from './queries/pictures';
 import accounts from './queries/accounts';
 import setDefaultAccount from './mutations/setDefaultAccount';
+import submitCanvas from './mutations/submitCanvas';
 
 const MutationType = new ObjectType({
   name: 'Mutation',
   description: 'These are the things we can change',
   fields: {
     setDefaultAccount,
+    submitCanvas,
   },
 });
 

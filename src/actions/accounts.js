@@ -3,13 +3,13 @@ import nodeFetch from 'node-fetch';
 
 import createFetch from '../createFetch';
 import { FETCH_ACCOUNTS_START, RECEIVE_ACCOUNTS, FETCH_ACCOUNTS_ERROR, SET_SELECTED_ACCOUNT_START, SET_SELECTED_ACCOUNT_ERROR, SET_SELECTED_ACCOUNT_COMPLETE } from '../constants';
+  
+const fetch = createFetch(nodeFetch, {
+  baseUrl: 'http://localhost:3000',
+});
 
 export function fetchAccounts() {
   return async (dispatch) => {
-    const fetch = createFetch(nodeFetch, {
-      baseUrl: 'http://localhost:3000',
-    });
-
     dispatch({ type: FETCH_ACCOUNTS_START, payload: {} });
 
     fetch('/graphql', {
@@ -25,25 +25,16 @@ export function fetchAccounts() {
 
 export function setSelectedAccount(hash) {
   console.log('in setSelectedAccount'); // eslint-disable-line no-console
-  console.log(hash); // eslint-disable-line no-console
 
   return async (dispatch) => {
     dispatch({ type: SET_SELECTED_ACCOUNT_START, payload: {} });
 
-    const fetch = createFetch(nodeFetch, {
-      baseUrl: 'http://localhost:3000',
-    });
-
     fetch('/graphql', {
-      body: JSON.stringify({ query: 'mutation{setDefaultAccount(hash:"123"){hash}}' }),
+      body: JSON.stringify({ query: `mutation{setDefaultAccount(hash:"${hash}"){hash}}` }),
     })
-    .then((response) => {
-      console.log(response); // eslint-disable-line no-console
-      return response.json();
-    })
+    .then(response => response.json())
     .then((json) => {
-      console.log(json); // eslint-disable-line no-console
-      dispatch({ type: SET_SELECTED_ACCOUNT_COMPLETE, payload: json.data });
+      dispatch({ type: SET_SELECTED_ACCOUNT_COMPLETE, payload: json.data.setDefaultAccount.hash });
     })
     .catch((error) => {
       dispatch({ type: SET_SELECTED_ACCOUNT_ERROR, payload: { val: error } });
